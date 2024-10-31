@@ -1,0 +1,60 @@
+<div class="main">
+    <div class="add-new-artwork">
+        <div class="title-of-add-new-artwork">Add new artwork</div>
+        <div id="div-form-adding-new-artwork">
+            <form (ngSubmit)="onSubmit($event)"> <!-- Pass the event here -->
+                <div class="fields-horizontal">
+                    <div class="form-fields">
+                        <div class="form-group">
+                          <input type="text" id="title" name="title" [(ngModel)]="newArtwork.title" placeholder="Insert title" required>
+                        </div>
+                        <div class="form-group">
+                          <input type="text" id="artist" name="artist" [(ngModel)]="newArtwork.artist" placeholder="Insert artist name" required>
+                        </div>
+                        <div class="form-group">
+                          <textarea id="description" name="description" [(ngModel)]="newArtwork.description" rows="4" placeholder="Add your description here" required></textarea>
+                        </div>
+                        <div class="form-group">
+                          <input type="text" id="link" name="photo_link" [(ngModel)]="newArtwork.photo_link" placeholder="Insert the link to client" required>
+                        </div>
+                        <div class="form-group">
+                          <select id="status" name="status" [(ngModel)]="newArtwork.status" required>
+                            <option value="true">Visible</option>
+                            <option value="false">Invisible</option>
+                          </select>
+                        </div>
+                    </div>
+                    <div class="file-upload" (drop)="onDrop($event)" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)">
+                        <label for="file" class="dropbox">
+                            <span *ngIf="!file">Drag & Drop your file here or click to upload</span>
+                            <span *ngIf="file">{{ file.name }}</span>
+                        </label>
+                        <input type="file" id="file" name="file" (change)="onFileChange($event)" required hidden>
+                    </div>
+                </div>
+                <button type="submit">Add Artwork</button>
+              </form>
+
+
+        </div>
+    </div>
+    <div class="change-details">
+        <div class="title-of-add-new-artwork">Add new artwork</div>
+        <div class="change-details-artowoks">
+            <div class="artwork" *ngFor="let artwork of artworks"
+            [ngClass]="{
+                'visible': artwork.status === true, 
+                'invisible': artwork.status === false
+            }"
+            >
+                <div class="photo">
+                    <img [src]="artwork.photo" alt="{{ artwork.title }}" class="artwork-image" />
+                </div>
+                <div class="buttons">
+                    <button (click)="changeStatus(artwork)">Change status</button>
+                    <button (click)="deletePhoto(artwork)">Delete photo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

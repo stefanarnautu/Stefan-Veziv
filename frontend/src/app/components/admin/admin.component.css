@@ -1,0 +1,224 @@
+.main{
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.add-new-artwork{
+    width: 90%;
+    height: 500px;
+    background-color:rgba(47, 50, 47,0.5); 
+    color:white;
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.title-of-add-new-artwork{
+    font-size: 40px;
+}
+
+#div-form-adding-new-artwork{
+    width: 100%;
+    padding: 10px;
+    height: calc(100% - 50px);
+    box-sizing: border-box;
+}
+
+#div-form-adding-new-artwork form{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.fields-horizontal{
+    display: flex;
+    height: 100%;
+}
+
+.fields-horizontal .form-fields{
+
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
+.fields-horizontal .file-upload{
+    width: 50%;
+    height: 100%;
+}
+
+.form-group input,
+.form-fields textarea,
+.form-fields select{
+    padding: 15px 5px 15px 5px;
+    border-radius: 10px;
+    width: 250px;
+    background-color:#3f4756;
+    border: none;
+}
+
+.form-group input::placeholder,
+.form-fields textarea,
+.form-fields select{
+    color: rgb(138, 138, 138);
+}
+
+.file-upload {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    border: 2px dashed #aaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #aaa;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.file-upload.drag-over {
+    border-color: #4a90e2;
+    background-color: #f0f8ff;
+}
+
+.dropbox {
+    font-size: 16px;
+    color: #777;
+}
+
+
+#div-form-adding-new-artwork form button{
+    background-color:rgb(33, 37, 33);
+    color: white;                 
+    font-size: 16px;               
+    padding: 12px 24px;            
+    border: none;                  
+    border-radius: 8px;     
+    cursor: pointer;               
+    transition: all 0.3s ease;   
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 25px;
+}
+
+#div-form-adding-new-artwork form button:hover {
+    background-color:rgb(47, 50, 47); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+}
+
+#div-form-adding-new-artwork form button:active {
+    transform: translateY(1px);  
+}
+
+.change-details{
+    width: 90%;
+    min-height: 500px;
+    background-color:rgba(47, 50, 47,0.5); 
+    color:white;
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    
+}
+
+.change-details .change-details-artowoks{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: raw;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+}
+
+.change-details .artwork{
+    border-radius: 5px;
+}
+
+.change-details .visible {
+    border: 4px solid green;
+}
+
+.change-details .invisible {
+    border: 4px solid rgb(160, 47, 47);
+}
+
+.change-details .artwork .photo {
+    width: 300px;
+    height: 300px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.change-details .artwork .photo .artwork-image{
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.change-details .artwork .buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.change-details .artwork .buttons button{
+    background-color:rgb(33, 37, 33);
+    color: white;                 
+    font-size: 16px;               
+    padding: 12px 24px;            
+    border: none;                  
+    border-radius: 8px;     
+    cursor: pointer;               
+    transition: all 0.3s ease;   
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+}
+
+.change-details .artwork .buttons button:nth-child(2){
+    background-color: rgb(160, 47, 47);
+}
+
+.change-details .artwork .buttons button:hover {
+    background-color:rgb(47, 50, 47); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+}
+
+.change-details .artwork .buttons button:active {
+    transform: translateY(1px);  
+}
+
+
+
+
+
+@media (max-width: 850px) {
+    .add-new-artwork{
+        height: 600px;
+    }
+    .fields-horizontal{
+        flex-direction: column;
+    }
+    .fields-horizontal .form-fields{
+        width: 100%;
+    }
+    
+    .fields-horizontal .file-upload{
+        height: 100px;
+        width: 100%;
+    }
+}

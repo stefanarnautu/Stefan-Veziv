@@ -1,0 +1,37 @@
+<div class="main">
+  <div *ngIf="loading" class="loading">
+    <span class="loading-text">Loading</span>
+  </div>
+
+  <div *ngIf="!loading" class="artwork-container">
+    <div
+    class="artwork"
+    *ngFor="let artwork of artworks; let i = index"
+    [ngClass]="{ 'even': i % 2 === 0, 'odd': i % 2 !== 0 }">
+        <div class="photo">
+          <img [src]="artwork.photo" alt="{{ artwork.title }}" class="artwork-image" />
+        </div>
+        <div class="text-part">
+          <div class="text-part-visible">
+            <p>
+              <span class="label">Title</span>
+              <span>  </span>
+              <span class="value">{{ artwork.title }}</span>
+            </p>
+            <p>
+              <span class="label">Author</span>
+              <span>  </span>
+              <span class="value">{{ artwork.artist }}</span>
+            </p>
+            <div class="description">
+              {{ artwork.description }}
+            </div>
+            <div class="website-link">
+              <a href="{{ artwork.photo_link }}">CLIENT WEBSITE</a>
+            </div>
+          </div>
+          
+        </div>
+    </div>
+  </div>
+</div>

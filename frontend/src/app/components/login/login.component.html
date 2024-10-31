@@ -1,0 +1,16 @@
+<div class="main">
+  <div id="form-for-login">
+      <form (ngSubmit)="login()">
+        <div>
+          <div id="username-password-fields">
+              <p class="text-above-input">Username</p>
+              <input class="input-field" [(ngModel)]="username" name="username" required placeholder="Enter your username">
+              <p class="text-above-input">Password</p>
+              <input class="input-field" [(ngModel)]="password" name="password" required placeholder="Enter your password" type="password">
+              <button id="button-for-submit-login" type="submit">Login</button>
+              <div *ngIf="error" id="error-message">{{ error }}</div>
+          </div>
+        </div>
+      </form>
+  </div>
+</div>
